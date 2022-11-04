@@ -38,10 +38,16 @@
 
 ## Installation
 
-1) Clone this repository:
-````
-$ git clone <https://github.com/rkle408/happy-panda.git>
+1) Clone this repository using HTTPS or SSH:
 
+HTTPS:
+````
+git clone https://github.com/rkle408/happy-panda.git
+````
+
+SSH
+````
+git clone git@github.com:rkle408/happy-panda.git
 ````
 2) Open folder in VS Code.
 
