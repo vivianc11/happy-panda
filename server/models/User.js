@@ -25,6 +25,13 @@ const userSchema = new Schema({
         ref: 'Reflection',
       },
     ],
+    pandas: [
+        {
+            //Need to figure out what goes here
+            //Emotions
+            //Do they have a name?
+        }
+    ]
   });
   
 userSchema.pre('save', async function (next) {
