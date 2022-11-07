@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 // someone needs to double check these reflection and panda syntax
+// will need to change if we do emotions instead of reflections, but syntax should be correct
 
 const typeDefs = gql`
     type User {
