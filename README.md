@@ -1,6 +1,6 @@
 # Happy Panda
 
-### About Dibs
+### About Happy Panda
 
 
 ### Helping the World
