@@ -22,7 +22,7 @@ const userSchema = new Schema({
     reflections: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Reflection',
+        ref: 'Note',
       },
     ],
     pandas: [

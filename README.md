@@ -1,6 +1,6 @@
 # Happy Panda
 
-### About Dibs
+### About Happy Panda
 
 
 ### Helping the World
@@ -60,7 +60,7 @@ npm i
 
 Open Integrated Terminal at package.json level, run command:
 ````
-npm run start
+npm run develop
 ````
 
 ### Screenshots
@@ -79,6 +79,7 @@ npm run start
 
 - Hoang, Andrew. Instructor. Guidance given during class. Date accessed: November 4-14, 2022.
 - Scharf, Michael. Teaching assistant. Guidance given during class time. November 4-14, 2022.
+- "Social-Emotional Learning Videos". <b>mylemarks</b>. <https://www.mylemarks.com/sel-videos.html>. Date accessed: November 7, 2022.
 
 
 ## License
@@ -93,7 +94,7 @@ This project is licensed under the terms of the MIT license.
 
 ## Deploy Application
 
-<>
+<https://happy-panda.vercel.app/>
 
 ## Features
 
@@ -105,4 +106,4 @@ This project is licensed under the terms of the MIT license.
 
 ## Technology Stack
 
-This project was built using ReactJS.
+This project was built using Mongoose, Express, ReactJS, Node.js, GraphQL.
