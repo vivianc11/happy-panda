@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
-// someone needs to double check these reflection and panda syntax
-// will need to change if we do emotions instead of reflections, but syntax should be correct
+// someone needs to double check these note and panda syntax
+// will need to change if we do emotions instead of notes, but syntax should be correct
 
 const typeDefs = gql`
     type User {
@@ -9,13 +9,13 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
-        reflections: [Reflection]!
+        notes: [Note]!
     }
 
-    type Reflection {
+    type note {
         _id: ID
-        reflectionText: String
-        reflectionAuthor: String
+        noteText: String
+        noteAuthor: String
         createdAt: String
         pandas: [Panda]!
     }
@@ -41,9 +41,9 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        addReflection(reflectionText: String!): Reflection
+        addNote(noteText: String!): Note
         addPanda(userId: ID!, ISthisTEXT: String!): User
-        removeReflection(reflectionId: ID!): Reflection
+        removeNote(noteId: ID!): Note
         removePanda(userId: ID!, pandaId: ID!): User
     }
 `;
