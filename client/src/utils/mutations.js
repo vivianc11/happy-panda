@@ -1,5 +1,12 @@
 import { gql } from '@apollo/client';
 
+// add a note
+// delete a note
+// edit emotion
+// edit hunger
+// edit potty
+// edit tired
+
 export const ADD_PROFILE = gql`
   mutation addProfile($name: String!, $email: String!, $password: String!) {
     addProfile(name: $name, email: $email, password: $password) {

@@ -1,21 +1,27 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PROFILES = gql`
-  query allProfiles {
-    profiles {
+
+// get all notes
+// get one user
+// get one panda
+
+
+export const QUERY_EMOTIONS = gql`
+  query allEmotions {
+    emotions {
       _id
       name
-      skills
+      solutions
     }
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
+export const QUERY_SINGLE_EMOTION = gql`
+  query singleEmotion($emotionId: ID!) {
+    emotion(emotionId: $emotionId) {
       _id
       name
-      skills
+      solution
     }
   }
 `;
