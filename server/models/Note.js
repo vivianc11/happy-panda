@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const noteSchema = new Schema({
     noteText: {
-        required: 'You need to leave a note!',
+        required: 'Add your reflection to move on!',
         minlength: 1,
         maxlength: 280,
         trim: true,
