@@ -11,12 +11,9 @@ const Header = () => {
   return (
     <header className="hero-head">
       <div className="navbar">
-        <h1 className="navbar-item">
+        <h1 className="navbar-item" style={{ fontSize: '2rem' }}>
           Happy Panda
         </h1>
-        <p className="navbar-item" style={{ fontSize: '1rem' }}>
-          What will make your panda happy?
-        </p>
         <div className="navbar-end">
           {Auth.loggedIn() ? (
             <>
