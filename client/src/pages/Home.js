@@ -1,10 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_EMOTIONS } from '../utils/queries';
+import { QUERY_USER } from '../utils/queries';
+
+// May need to be data?.panda.pandaEmotions
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_EMOTIONS);
-  const emotions = data?.emotions || [];
+  const { loading, data } = useQuery(QUERY_USER);
+  const emotions = data?.pandaEmotions || [];
 
   return (
     <main>
