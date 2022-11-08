@@ -80,6 +80,7 @@ npm run develop
 - Hoang, Andrew. Instructor. Guidance given during class. Date accessed: November 4-14, 2022.
 - Scharf, Michael. Teaching assistant. Guidance given during class time. November 4-14, 2022.
 - "Social-Emotional Learning Videos". <b>mylemarks</b>. <https://www.mylemarks.com/sel-videos.html>. Date accessed: November 7, 2022.
+- "Big set of funny panda bear in cartoon style in different standing poses and emotions isolated on white background". <b>Adobe Stock</b>. <https://stock.adobe.com/search/images?k=sad+panda&asset_id=284287764>. Date accessed: November 7, 2022.
 
 
 ## License
