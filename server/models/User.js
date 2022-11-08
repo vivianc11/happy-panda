@@ -1,6 +1,21 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const { Schema, model, Types } = require('mongoose');
+const moment = require('moment');
+
+const PandaSchema = new Schema({
+    pandaId: {
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
+    },
+    pandaEmotion: {
+        type: String,
+        required: true,
+        default: 'Happy',
+    },
+},);
+
 const userSchema = new Schema({
     username: {
       type: String,
@@ -19,19 +34,13 @@ const userSchema = new Schema({
       required: true,
       minlength: 5,
     },
-    reflections: [
+    notes: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Note',
       },
     ],
-    pandas: [
-        {
-            //Need to figure out what goes here
-            //Emotions
-            //Do they have a name?
-        }
-    ]
+    pandas: [PandaSchema]
   });
   
 userSchema.pre('save', async function (next) {
