@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bulma/css/bulma.min.css';
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -41,7 +42,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <div className="container">
+          <div className="container is-fluid">
             <Routes>
               <Route 
                 path="/" 
