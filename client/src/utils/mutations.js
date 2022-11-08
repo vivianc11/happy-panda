@@ -11,6 +11,7 @@ export const ADD_NOTE = gql`
   mutation AddNote($noteText: String!, $noteId: ID!) {
     addNote(noteText: $noteText) {
       noteText
+    }
   }
 `;
 
@@ -18,7 +19,8 @@ export const REMOVE_NOTE = gql`
   mutation RemoveNote($noteText: String!, $noteId: ID!) {
     removeNote(noteId: $noteId) {
       noteText
-}
+    }
+  }
 `;
 
 export const UPDATE_PANDA = gql`
@@ -27,6 +29,7 @@ export const UPDATE_PANDA = gql`
     pandas {
       pandaEmotion
     }
+  }
 }
 `;
 
@@ -44,3 +47,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const LOGIN_USER = gql`
+  mutation LoginUser($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      user {
+        username
+        password
+      }
+    }
+  }
+`; 

@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Reflection } = require('../models');
+const { User, Note } = require('../models');
 const { signToken } = require('../utils/auth');
 
 // will need to add more queries and mutations once we finalize models and schemas
