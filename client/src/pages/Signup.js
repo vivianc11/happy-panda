@@ -41,11 +41,12 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="hero is-fullheight">
+      <div className="hero-body">
+        <div className="container has-text-centered">
+          <h4 className="title has-text-black">Sign Up</h4>
+          <hr class="login-hr"></hr>
+          <div className="box">
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -53,32 +54,37 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <div className="field control">
                 <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="name"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
+                  className="input is-large"
+                  placeholder="Enter your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                </div>
+                <div className="field control">
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="input is-large"
+                  placeholder="Choose a username"
+                  name="name"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                </div>
+                <input
+                  className="input is-large"
+                  placeholder="Choose a password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <hr class="login-hr"></hr>
                 <button
-                  className="btn btn-block btn-info"
+                  className="button is-block is-info is-large is-fullwidth"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
