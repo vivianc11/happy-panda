@@ -7,46 +7,40 @@ import { gql } from '@apollo/client';
 // edit potty
 // edit tired
 
-export const ADD_PROFILE = gql`
-  mutation addProfile($name: String!, $email: String!, $password: String!) {
-    addProfile(name: $name, email: $email, password: $password) {
-      token
-      profile {
-        _id
-        name
+export const ADD_NOTE = gql`
+  mutation AddNote($noteText: String!, $noteId: ID!) {
+    addNote(noteText: $noteText) {
+      noteText
+  }
+`;
+
+export const REMOVE_NOTE = gql`
+  mutation RemoveNote($noteText: String!, $noteId: ID!) {
+    removeNote(noteId: $noteId) {
+      noteText
+}
+`;
+
+export const UPDATE_PANDA = gql`
+  mutation UpdatePanda($pandaEmotion: String!) {
+    updatePanda(userId: $userId, pandaEmotion: $pandaEmotion) {
+    pandas {
+      pandaEmotion
+    }
+}
+`;
+
+export const ADD_USER = gql`
+  mutation AddUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      user {
+        email
+        username
+        password
+        pandas {
+          pandaEmotion
+        }
       }
-    }
-  }
-`;
-
-export const ADD_SKILL = gql`
-  mutation addSkill($profileId: ID!, $skill: String!) {
-    addSkill(profileId: $profileId, skill: $skill) {
-      _id
-      name
-      skills
-    }
-  }
-`;
-
-export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      profile {
-        _id
-        name
-      }
-    }
-  }
-`;
-
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: String!) {
-    removeSkill(skill: $skill) {
-      _id
-      name
-      skills
     }
   }
 `;

@@ -1,9 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const { Schema, model, Types } = require('mongoose');
-const moment = require('moment');
-
 const PandaSchema = new Schema({
     pandaId: {
         type: Schema.Types.ObjectId,
