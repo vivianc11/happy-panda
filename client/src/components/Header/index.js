@@ -9,32 +9,27 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
-      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-dark" to="/">
-          <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Happy Panda
-          </h1>
-        </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+    <header className="hero-head">
+      <div className="navbar">
+        <h1 className="navbar-item">
+          Happy Panda
+        </h1>
+        <p className="navbar-item" style={{ fontSize: '1rem' }}>
           What will make your panda happy?
         </p>
-        <div>
+        <div className="navbar-end">
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/me">
-                View My Profile
-              </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="navbar-item navbar-end" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/login">
+              <Link className="navbar-item navbar-end is-light" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="navbar-item navbar-end is-light" to="/signup">
                 Signup
               </Link>
             </>
