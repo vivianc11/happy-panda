@@ -46,7 +46,7 @@ const Signup = () => {
       <div className="hero-body">
         <div className="container has-text-centered">
           <h4 className="title has-text-black">Sign Up</h4>
-          <hr class="login-hr"></hr>
+          <hr className="login-hr"></hr>
           <div className="box">
             {data ? (
               <p>
@@ -83,7 +83,7 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <hr class="login-hr"></hr>
+                <hr className="login-hr"></hr>
                 <button
                   className="button is-block is-info is-large is-fullwidth"
                   style={{ cursor: 'pointer' }}
