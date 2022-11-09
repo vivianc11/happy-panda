@@ -46,7 +46,7 @@ const Home = () => {
                             </h2>
                             <div>
                               <img 
-                                src={require('./panda.jpeg')} 
+                                src={require('./pandas/happy.PNG')} 
                                 alt="sad panda">
                               </img>
                             </div>
