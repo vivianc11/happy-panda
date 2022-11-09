@@ -25,7 +25,7 @@ const Login = (props) => {
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: {...formState },
       });
 
       Auth.login(data.login.token);
@@ -45,7 +45,7 @@ const Login = (props) => {
       <div className="hero-body">
         <div className="container has-text-centered">
           <h4 className="title has-text-black">Login</h4>
-          <hr class="login-hr"></hr>
+          <hr className="login-hr"></hr>
           <div className="box">
             {data ? (
               <p>
@@ -72,7 +72,7 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <hr class="login-hr"></hr>
+                <hr className="login-hr"></hr>
                 <button
                   className="button is-block is-info is-large is-fullwidth"
                   style={{ cursor: 'pointer' }}
