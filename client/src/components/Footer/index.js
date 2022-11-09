@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer className="hero-foot">
       <div className="content has-text-centered is-flex-align-items-flex-end">
-        <h4>&copy; {new Date().getFullYear()} - Dream Team</h4>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h6>2022 - Dream Team</h6>
       </div>
     </footer>
   );
