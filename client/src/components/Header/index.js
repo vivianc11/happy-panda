@@ -14,16 +14,19 @@ const Header = () => {
         <h1 className="navbar-item" style={{ fontSize: '2rem' }}>
           Happy Panda
         </h1>
-        <div className="navbar-end">
+        <div className="navbar-item navbar-end is-white">
           {Auth.loggedIn() ? (
             <>
-              <button className="navbar-item navbar-end" onClick={logout}>
+              <button className="button navbar-item navbar-end is-white">
+                Notes
+              </button>
+              <button className="button navbar-item navbar-end is-white" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="navbar-item navbar-end is-light" to="/login">
+              <Link className="navbar-item navbar-end is-light is-mobile" to="/login">
                 Login
               </Link>
               <Link className="navbar-item navbar-end is-light" to="/signup">
