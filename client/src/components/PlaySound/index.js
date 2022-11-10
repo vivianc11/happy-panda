@@ -2,8 +2,8 @@ import React from "react";
 import {Howl} from "howler";
 import { isNonEmptyArray } from "@apollo/client/utilities";
 
-function PlaySound(){
-    const soundSrc = "./Welcome-back.mp3";
+function PlaySound(props){
+    const soundSrc = props.src;
     const callMySound = (src) =>{
         const sound = new Howl({
             src,
@@ -13,7 +13,7 @@ function PlaySound(){
     };
     return(
         <div>
-            <button style={{backgroundColor:"white", border:"none"}} onClick={()=> callMySound(soundSrc)}><img width="30px" height = "30px" src="audio.png"/></button>
+            <button style={{backgroundColor:"rgba(255, 255, 255, 0)", border:"none"}} onClick={()=> callMySound(soundSrc)}><img width="30px" height = "30px" src="audio.png"/></button>
             
         </div>
     )

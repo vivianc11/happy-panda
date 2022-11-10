@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import { Link } from "react-router-dom";
-
+import PlaySound from "../components/PlaySound";
 // May need to be data?.panda.pandaEmotions
 
 import Auth from '../utils/auth';
@@ -57,6 +57,7 @@ const Home = () => {
                                 Your panda missed you!
                                 {/* This will give a hint as to how to help the panda */}
                             </h2>
+                            <PlaySound src="Welcome-back.mp3" />
                             <div>
                               <img 
                                 src={require('./pandas/happy.PNG')} 

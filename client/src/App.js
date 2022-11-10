@@ -70,7 +70,7 @@ function App() {
 
             </Routes>
           </div>
-          <PlaySound />
+          
           <Footer />
         </div>
       </Router>
