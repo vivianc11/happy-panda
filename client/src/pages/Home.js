@@ -75,12 +75,12 @@ const Home = () => {
                         How to help the panda
                     </p>
                     <ul className="menu-list">
-                        <li><a href="https://www.youtube.com/watch?v=fzjfsOUmg3I">Take a nap</a></li>
-                        <li><a href="../">Call a Friend</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro">Go on a walk</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=fzjfsOUmg3I">Ask for help</a></li>
-                        <li><a href="../">Write about how you feel</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro">Go to the bathroom</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=fzjfsOUmg3I">Go on a walk</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=GYEOwClY-cQ">Listen to Music</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro">Hobby</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro">Journal your feelings</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=tN5gSwhBMek">Take Deep Breaths</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=6CLuYV9Hlkk">Count Five Things I'm Grateful For</a></li>
                     </ul>
                 </aside>
             </div>
