@@ -2,14 +2,15 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import { Link } from "react-router-dom";
-import Note from '../components/Notes/index'
 
 // May need to be data?.panda.pandaEmotions
 
 import Auth from '../utils/auth';
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
   const { loading, data } = useQuery(QUERY_USER);
+  // eslint-disable-next-line no-unused-vars
   const emotions = data?.pandaEmotions || [];
 
   return (
