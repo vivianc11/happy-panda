@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import { Link } from "react-router-dom";
+import Note from '../components/Notes/index'
 
 // May need to be data?.panda.pandaEmotions
 
