@@ -7,15 +7,18 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         user: async (parent, { username }) => {
-            return User.findOne({ username });
+            return User.findOne({ username }).populate("pandas");
         },
     },
 
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
+        addUser: async (parent, { username, email, password}) => {
             const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
+        },
+        updateUser: async(parent,{username, pandaEmotion})=>{
+          return await User.findOneAndUpdate({username:username},{pandaEmotion:pandaEmotion},{new:true});
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
