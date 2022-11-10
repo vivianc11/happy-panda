@@ -8,7 +8,7 @@ const Footer = () => {
         <br></br>
         <br></br>
         <br></br>
-        <h6>2022 - Dream Team</h6>
+        <p>2022 - Dream Team</p>
       </div>
     </footer>
   );
