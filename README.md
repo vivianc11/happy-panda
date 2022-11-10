@@ -81,7 +81,10 @@ npm run develop
 - Scharf, Michael. Teaching assistant. Guidance given during class time. November 4-14, 2022.
 - "Audio - Audio Vector Icon". <b>pngkey</b>. <https://www.pngkey.com/detail/u2q8t4i1q8t4e6a9_audio-audio-vector-icon/>. Date accessed: November 10, 2022.
 - "Big set of funny panda bear in cartoon style in different standing poses and emotions isolated on white background". <b>Adobe Stock</b>. <https://stock.adobe.com/search/images?k=sad+panda&asset_id=284287764>. Date accessed: November 7, 2022.
+- "Center Textarea In Div With Code Examples". <b>FolksTalk</b>. <https://www.folkstalk.com/2022/09/center-textarea-in-div-with-code-examples.html>. Date accessed: November 10, 2022. 
 - "How to keep your footer where it belongs?". <b>freeCodeCamp</b>. <https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/>. Date accessed: November 9, 2022.
+- "Pediatric Coping Skills". <b>Children's Hospital Colorado</b>. <https://www.childrenscolorado.org/doctors-and-departments/departments/psych/mental-health-professional-resources/primary-care-articles/pediatric-coping-skills/>. Date accessed: November 10, 2022.
+- "png opacity changer - world's simplest png tool". <b>OnlinePNGTools</b>. <https://onlinepngtools.com/change-png-opacity>. Date accessed: November 9, 2022.
 - "React Project: Sticky Notes App (useReducer Hook)". <b>codebubb</b> on YouTube. <https://www.youtube.com/watch?v=KcXsX1XXa2s>. Date accessed: November 9, 2022.
 - "Social-Emotional Learning Videos". <b>mylemarks</b>. <https://www.mylemarks.com/sel-videos.html>. Date accessed: November 7, 2022.
 - <b>heroicons</b>. <https://heroicons.com/>. Date accessed: November 9, 2022.
