@@ -17,9 +17,11 @@ const Header = () => {
         <div className="navbar-item navbar-end is-white">
           {Auth.loggedIn() ? (
             <>
-              <button className="button navbar-item navbar-end is-white">
-                Notes
-              </button>
+              <Link className="navbar-item navbar-end is-light is-mobile" to="/note">
+                <button className="button navbar-item navbar-end is-white">
+                  Notes
+                </button>
+              </Link>
               <button className="button navbar-item navbar-end is-white" onClick={logout}>
                 Logout
               </button>
