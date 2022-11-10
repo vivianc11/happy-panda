@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "bulma": "^0.9.4",
+        "react-howler": "^5.2.0",
         "react-router-dom": "^6.4.3"
     }
 }
