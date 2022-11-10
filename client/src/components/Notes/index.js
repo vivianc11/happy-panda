@@ -75,7 +75,7 @@ export default function Note() {
                 <textarea value={noteInput}
                     onChange={event => setNoteInput(event.target.value)}
                     placeholder="How did this make you feel?"></textarea>
-                <button>Add Your Thoughts</button>
+                <button>Add your thoughts, and move them around!</button>
             </form>
 
             { notesState
