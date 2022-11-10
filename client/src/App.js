@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PlaySound from "./components/PlaySound";
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -57,9 +58,9 @@ function App() {
                 path="/signup" 
                 element={<Signup />}
               />
-              
             </Routes>
           </div>
+          <PlaySound />
           <Footer />
         </div>
       </Router>

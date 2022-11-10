@@ -40,6 +40,7 @@ const Home = () => {
                                 Welcome Back.
                                 {/* This will tell user what emotion panda has */}
                             </h1>
+                            
                             <h2 className="subtitle">
                                 Your panda missed you!
                                 {/* This will give a hint as to how to help the panda */}
