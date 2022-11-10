@@ -68,10 +68,10 @@ export default function Note() {
     };
 
     return (
-        <div onDragOver={dragOver}>
-            <h1>Notes ({ notesState.totalNotes })</h1>
-            
+        <div onDragOver={dragOver}>            
             <form onSubmit={addNote} className="note-form">
+                
+            <h1>Notes ({ notesState.totalNotes })</h1>
                 <textarea value={noteInput}
                     onChange={event => setNoteInput(event.target.value)}
                     placeholder="How did this make you feel?"></textarea>
