@@ -1,0 +1,63 @@
+.note-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid lightgray;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100px;
+    padding: 10px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    background-color: #afe0e2;
+    cursor: pointer;
+    padding: 10px;
+    border: 0;
+    outline: none;
+}
+
+button:hover {
+    color: white;
+    background-color: #f9b149;
+}
+
+.note {
+    position: absolute;
+    cursor: pointer;
+    background-image: url('./assets/pandanote.png');
+    background-size: cover;
+    top: 100px;
+    left: 300px;
+    height: 200px;
+    width: 200px;
+    padding: 15px;
+    border: 2px solid #40b5bb;
+    border-radius: 10px;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    white-space: pre-wrap;
+    scroll-behavior: smooth;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    transition: transform .3s ease;
+}
+
+.close:hover {
+    transform: scale(1.6);
+}
