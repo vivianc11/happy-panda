@@ -10,18 +10,13 @@ const typeDefs = gql`
         email: String
         password: String
         notes: [Note]!
-        pandas: [Panda]!
+        pandaEmotion: String
     }
 
     type Note {
         _id: ID
         noteText: String
         noteAuthor: String
-    }
-
-    type Panda {
-        _id: ID
-        pandaEmotion: String
     }
 
     type Auth {
@@ -38,8 +33,8 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         addNote(noteText: String!): Note
-        updatePanda(userId: ID!, pandaEmotion: String!): User
         removeNote(noteId: ID!): Note
+        updateUser(username: String!, pandaEmotion: String): User
     }
 `;
 

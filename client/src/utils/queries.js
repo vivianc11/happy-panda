@@ -13,9 +13,7 @@ export const QUERY_USER = gql`
       notes {
         noteText
       }
-      pandas {
-        pandaEmotion
-      }
+      pandaEmotion
     }
   }
 `;

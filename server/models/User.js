@@ -1,17 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const PandaSchema = new Schema({
-    pandaId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId()
-    },
-    pandaEmotion: {
-        type: String,
-        required: true,
-        default: 'Happy',
-    },
-},);
 
 const userSchema = new Schema({
     username: {
@@ -37,7 +26,12 @@ const userSchema = new Schema({
         ref: 'Note',
       },
     ],
-    pandas: [PandaSchema]
+    pandaEmotion: 
+    {
+      type: String,
+      default:"happy"
+    }
+    
   });
   
 userSchema.pre('save', async function (next) {

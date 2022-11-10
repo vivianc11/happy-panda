@@ -14,6 +14,13 @@ export const ADD_NOTE = gql`
     }
   }
 `;
+export const UPDATE_USER = gql`
+mutation UpdateUser($username: String!, $pandaEmotion: String) {
+  updateUser(username: $username, pandaEmotion: $pandaEmotion) {
+    pandaEmotion
+    username
+  }
+}`;
 
 export const REMOVE_NOTE = gql`
   mutation RemoveNote($noteText: String!, $noteId: ID!) {
@@ -23,15 +30,7 @@ export const REMOVE_NOTE = gql`
   }
 `;
 
-export const UPDATE_PANDA = gql`
-  mutation UpdatePanda($pandaEmotion: String!) {
-    updatePanda(userId: $userId, pandaEmotion: $pandaEmotion) {
-    pandas {
-      pandaEmotion
-    }
-  }
-}
-`;
+
 
 export const ADD_USER = gql`
   mutation AddUser($username: String!, $email: String!, $password: String!) {
@@ -41,9 +40,7 @@ export const ADD_USER = gql`
         email
         username
         password
-        pandas {
-          pandaEmotion
-        }
+        pandaEmotion
       }
     }
   }
