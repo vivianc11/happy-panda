@@ -16,7 +16,6 @@ const typeDefs = gql`
     type Note {
         _id: ID
         noteText: String
-        noteAuthor: String
     }
 
     type Auth {
@@ -32,7 +31,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        addNote(noteText: String!): Note
+        addThought(noteText: String!): Note
         removeNote(noteId: ID!): Note
         updateUser(username: String!, pandaEmotion: String): User
     }
