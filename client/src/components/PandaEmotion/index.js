@@ -5,7 +5,11 @@ import PlaySound from "../PlaySound";
 import { useEffect, useState } from 'react';
 
 const emotions=["angry","worried","lonely","jealous","disappointed"];
-const hints = ["Panda needs to release some negative energy, excersize really helps!","Sometimes writing down your worries helps with anxiety!", "If you have no one to talk to, some music really helps!", "Other might have things you want, but you have so many things you can be thankful for!","It's easy to get frustrated and sad when you're disappointed, try some calming techniques!"]
+const hints = ["Panda needs to release some negative energy, exercise really helps!",
+"Sometimes writing down your worries helps with anxiety!", 
+"If you have no one to talk to, listening to music might help!", 
+"Others might have things you want, but you have so many things to be thankful for!",
+"It's sad when things don't go your way. Try some calming techniques!"]
 const PandaEmotion = () => {
     const [createEmotion, { error }] = useMutation(UPDATE_USER)
     const [emotion,setEmotion] = useState("happy");
@@ -34,11 +38,11 @@ const PandaEmotion = () => {
             <div className="hero-body">
                 <div className="container">
                     <div className='columns'>
-                    <h1 className="title column is-half">
+                    <h1 className="title column">
                         Panda is {emotion}!
                         {/* This will tell user what emotion panda has */}
                     </h1>
-                    <PlaySound className = "column is-half" src= {require(`../../pages/audio/${emotion}.mp3`)}/>
+                    <PlaySound className = "column" src= {require(`../../pages/audio/${emotion}.mp3`)}/>
                     </div>
                     <h2 className="subtitle">
                         {hint}
