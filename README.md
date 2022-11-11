@@ -1,16 +1,25 @@
 # Happy Panda
 
 ### About Happy Panda
-
+This application is an social-emotional educational tool for kids. Upon signing up/logging in to the application, the user will be presented with their personal panda experiencing a randomly generated negative emotion. The goal for the user is to make their panda happy again by choosing an associated solution presented on the right of the page. When the correct answer is chosen, a video will open on a new tab that informs the user about that negative emotion. When the video is finished and the tab is closed, the original page will present the user with a form where they can reflect on their own emotions. When the user goes back to their panda, they will be presented with another random negative emotion to start the process over again.
 
 ### Helping the World
-
+We believe that it's important to provide social-emotional education to kids so they have an idea of what/how they're feeling as well as how to manage them properly. What better way to provide a learning tool than through a game with a cute panda? Ideally this will also help the adults involved in the kid's life to develop/appreciate social-emotional intelligence. 
 
 ### What We Learned from the Project
-
+- Learning the server folder structures for incorporating MongoDB/Mongoose in our app. This allows storage of data in the back end with CRUD operations.
+- Using GraphQL/Apollo client to organize data through queries and mutations
+- Setting up the app so the server as well as the client is running concurrently
+- Implementing signup/login and authentication with JWT
+- Learning client folder strutures for React.js to build the front end, along with importing Bulma CSS library
+- Inserting recorded audio files and using Howler.js to make it functional on the page
 
 ### Future Development
-
+ - Creating a mobile app so users can learn on the go
+ - Developing hunger, tiredness, and potty meters that influence how the panda feels
+ - Expanding the list of emotions with associating videos
+ - Animating the panda along with being able to name your own panda
+ - Have the audio play on hover instead of having the users click on the audio button
 
 ## Table of Contents
 
@@ -29,8 +38,6 @@
 -[Walkthrough-Video](#walkthrough-video)
 
 -[Deploy-Application](#deploy-application)
-
--[Features](#features)
 
 -[Tests](#tests)
 
@@ -88,6 +95,7 @@ npm run develop
 - "React Project: Sticky Notes App (useReducer Hook)". <b>codebubb</b> on YouTube. <https://www.youtube.com/watch?v=KcXsX1XXa2s>. Date accessed: November 9, 2022.
 - "Social-Emotional Learning Videos". <b>mylemarks</b>. <https://www.mylemarks.com/sel-videos.html>. Date accessed: November 7, 2022.
 - <b>heroicons</b>. <https://heroicons.com/>. Date accessed: November 9, 2022.
+- "Picture of kids". <https://study.com/blog/4-ways-to-determine-your-new-students-learning-styles.html>. Date accessed: November 11, 2022.
 
 ## License
 
@@ -103,12 +111,9 @@ This project is licensed under the terms of the MIT license.
 
 <https://happy-panda.vercel.app/>
 
-## Features
-
-
 
 ## Tests
-
+TBD
 
 
 ## Technology Stack
