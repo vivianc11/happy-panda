@@ -24,7 +24,7 @@ const Home = () => {
     <div className="container">
         <div className="columns">
             {Auth.loggedIn() ? (
-            <div className="column is-one-quarter">
+            <div className="column is-one-quarter mt-2">
                 <aside className="menu is-mobile">
                     <p className="menu-label">
                         Meditations 
@@ -91,14 +91,7 @@ const Home = () => {
         </section>
     </div>
             )}
-            
-            {Auth.loggedIn() ? (
-            <div className="column is-one-quarter">
-                <SideBar/>
-            </div>
-            ) : (
-                <div/>
-            )}
+           
         </div>
     </div>
     </main>
