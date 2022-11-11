@@ -7,12 +7,13 @@ import { gql } from '@apollo/client';
 // edit potty
 // edit tired
 
-export const ADD_NOTE = gql`
-  mutation AddNote($noteText: String!, $noteId: ID!) {
-    addNote(noteText: $noteText) {
-      noteText
-    }
+export const ADD_THOUGHT = gql`
+mutation addThought($noteText: String!) {
+  addThought(noteText: $noteText) {
+    noteText
+    _id
   }
+}
 `;
 export const UPDATE_USER = gql`
 mutation UpdateUser($username: String!, $pandaEmotion: String) {

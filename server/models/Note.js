@@ -7,12 +7,12 @@ const noteSchema = new Schema({
         minlength: 1,
         maxlength: 280,
         trim: true,
-      },
-      noteAuthor: {
+    },
+    noteAuthor: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
-      },
+    },
 });
 
 const Note = model('Note', noteSchema);

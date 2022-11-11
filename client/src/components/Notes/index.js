@@ -1,6 +1,8 @@
 import React, { useState, useReducer } from "react";
 import './style.css';
 import { v4 as uuid } from 'uuid';
+import { ADD_THOUGHT } from "../../utils/mutations";
+import { useMutation } from '@apollo/client';
 
 const initialNoteState = {
     lastNoteCreated: null,
@@ -37,24 +39,73 @@ const notesReducer = (prevState, action) => {
 };
 
 export default function Note() {
-    const [noteInput, setNoteInput] = useState('');
+    // const [formState, setFormState] = useState({
+    //     noteText: '',
+    //   });
+    // eslint-disable-next-line no-unused-vars
+    const [addThought, { error, data }] = useMutation(ADD_THOUGHT);
+
+      // update state based on form input changes
+//     const handleChange = (event) => {
+//         const { name, value } = event.target;
+
+//         setFormState({
+//         ...formState,
+//         [name]: value,
+//         });
+//     };
+
+//       // submit form
+//     const handleFormSubmit = async (event) => {
+//         event.preventDefault();
+//         console.log("this is form state")
+//         console.log(noteText);
+
+//         try {
+//             const { data } = await addThought({
+//                 variables: { ...formState },
+//         });
+//         console.log("this is going to mutation")
+//         console.log(data);
+
+//         } catch (e) {
+//           console.error(e);
+//     }
+//   };
+
+    const [noteText, setNoteText] = useState('');
     const [notesState, dispatch] = useReducer(notesReducer, initialNoteState);
 
-    const addNote = event => {
+    const addNote = async event => {
         event.preventDefault();
 
-        if(!noteInput) {
+        if(!noteText) {
             return;
         }
 
         const newNote = {
             id: uuid(),
-            text: noteInput,
+            text: noteText,
             rotate: Math.floor(Math.random() *5),
         };
 
         dispatch({ type: 'ADD_NOTE', payload: newNote });
-        setNoteInput('');
+
+        // This will allow you to store the data
+        try { 
+            // eslint-disable-next-line no-unused-vars
+            const { data } = await addThought({
+                variables: { noteText: noteText}
+            })
+            console.log("It works")
+
+        } catch(err){
+            console.log("It failed")
+        }
+
+        // This will clear out the data in the textarea with onClick
+        // Want to do it in this order so that store the text THEN clear the value
+        setNoteText('');
     };
     
     const dropNote = event => {
@@ -69,13 +120,18 @@ export default function Note() {
 
     return (
         <div onDragOver={dragOver}>            
-            <form onSubmit={addNote} className="note-form">
+            {/* <form onSubmit={() => {addNote(); handleFormSubmit()}}  */}
+            
+            <form className="note-form">
                 
             <h1>Notes ({ notesState.totalNotes })</h1>
-                <textarea value={noteInput}
-                    onChange={event => setNoteInput(event.target.value)}
-                    placeholder="How did this make you feel?"></textarea>
-                <button>Add your thoughts, and move them around!</button>
+                <textarea value={noteText}
+                    onChange={event => setNoteText(event.target.value)}
+                    placeholder="How did this make you feel?">
+                </textarea>
+                <button onClick={addNote}>
+                    Add your thoughts, and move them around!
+                </button>
             </form>
 
             { notesState

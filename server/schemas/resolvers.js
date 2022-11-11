@@ -36,7 +36,10 @@ const resolvers = {
             const token = signToken(user);
       
             return { token, user };
-          },
+        },
+        addThought: async (parent, { noteText }) => {
+            return await Note.create({ noteText });
+        }
     },
 };
 
