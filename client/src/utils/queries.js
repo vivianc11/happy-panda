@@ -17,3 +17,12 @@ export const QUERY_USER = gql`
     }
   }
 `;
+export const QUERY_ME = gql`
+query Query {
+  me {
+    _id
+    username
+    pandaEmotion
+  }
+}
+`;

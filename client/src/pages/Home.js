@@ -91,14 +91,7 @@ const Home = () => {
         </section>
     </div>
             )}
-            
-            {Auth.loggedIn() ? (
-            <div className="column is-one-quarter">
-                <SideBar/>
-            </div>
-            ) : (
-                <div/>
-            )}
+           
         </div>
     </div>
     </main>

@@ -1,4 +1,4 @@
-import { QUERY_USER } from '../../utils/queries';
+import { QUERY_ME } from '../../utils/queries';
 import { UPDATE_USER } from '../../utils/mutations';
 import { useQuery, useMutation } from '@apollo/client';
 import PlaySound from "../PlaySound";
@@ -17,6 +17,9 @@ const PandaEmotion = () => {
     var randomIndex = Math.floor(Math.random()*emotions.length);
     var randomEmotion = emotions[randomIndex];
     var randomHint = hints[randomIndex];
+    const { loading, data } = useQuery(QUERY_ME);
+    const username = data?.me.username || [];
+    console.log(username);
     const changeEmotion = async () => {
         try {
             await createEmotion({variables:{username:"vixter030",pandaEmotion:randomEmotion}});
@@ -33,7 +36,9 @@ const PandaEmotion = () => {
        changeEmotion();
         },[]);
 
-    return (<div className="column is-half">
+    return (
+    <div className='column'>
+        <div className="column is-five-eights">
         <section className="hero is-info welcome is-small">
             <div className="hero-body">
                 <div className="container">
@@ -58,6 +63,22 @@ const PandaEmotion = () => {
                 </div>
             </div>
         </section>
+    </div>
+    
+    <div className="column is-one-quarter">
+        <aside className="menu is-mobile">
+                    <p className="menu-label">
+                        Choose what will help Panda!
+                    </p>
+                    <ul className="menu-list">
+                        <li className='columns'><a className = "column" id = "angry" href="https://www.youtube.com/watch?v=fzjfsOUmg3I" target="_blank" rel="noreferrer">Go on a walk</a><PlaySound className = "column" src= {require(`../../pages/audio/walk.mp3`)}/></li>
+                        <li className='columns'><a className = "column" id = "lonely" href="https://www.youtube.com/watch?v=GYEOwClY-cQ" target="_blank" rel="noreferrer">Listen to Music</a><PlaySound className = "column" src= {require(`../../pages/audio/music.mp3`)}/></li>
+                        <li className='columns'><a className = "column" id = "worried" href="https://www.youtube.com/watch?v=JzKZ75ELpro" target="_blank" rel="noreferrer">Journal your feelings</a><PlaySound className = "column" src= {require(`../../pages/audio/write.mp3`)}/></li>
+                        <li className='columns'><a className = "column" id = "disappointed" href="https://www.youtube.com/watch?v=tN5gSwhBMek" target="_blank" rel="noreferrer">Take Deep Breaths</a><PlaySound className = "column" src= {require(`../../pages/audio/breathe.mp3`)}/></li>
+                        <li className='columns'><a className = "column" id = "jealous" href="https://www.youtube.com/watch?v=6CLuYV9Hlkk" target="_blank" rel="noreferrer">Count Five Things I'm Grateful For</a><PlaySound className = "column" src= {require(`../../pages/audio/gratitude.mp3`)}/></li>
+                    </ul>
+                </aside>
+    </div>
     </div>
     )
 }
