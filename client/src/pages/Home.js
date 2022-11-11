@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
-
+import PlaySound from "../components/PlaySound";
 import PandaEmotion from '../components/PandaEmotion';
 
 import { Link } from "react-router-dom";
@@ -60,7 +60,35 @@ const Home = () => {
                 <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
               </p>
             )}
-            <PandaEmotion/>
+            {Auth.loggedIn() ? (
+                <PandaEmotion/>
+            ):(
+                <div className="column is-half">
+        <section className="hero is-info welcome is-small">
+            <div className="hero-body">
+                <div className="container">
+                    <h1 className="title">
+                        Welcome Back.
+                        {/* This will tell user what emotion panda has */}
+                    </h1>
+
+                    <h2 className="subtitle">
+                        Your panda missed you!
+                        {/* This will give a hint as to how to help the panda */}
+                    </h2>
+                    <PlaySound src="Welcome-back.mp3" />
+                    <div>
+                        <img
+                            src={require(`./pandas/happy.PNG`)}
+                            alt="sad panda">
+                        </img>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+            )}
+            
             {Auth.loggedIn() ? (
             <div className="column is-one-quarter">
                 <aside className="menu is-mobile">
