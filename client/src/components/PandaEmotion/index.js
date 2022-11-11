@@ -9,20 +9,23 @@ const hints = ["Panda needs to release some negative energy, exercise really hel
 "Sometimes writing down your worries helps with anxiety!", 
 "If you have no one to talk to, listening to music might help!", 
 "Others might have things you want, but you have so many things to be thankful for!",
-"It's sad when things don't go your way. Try some calming techniques!"]
+"It's sad when things don't go your way. Try some calming techniques!"];
+
 const PandaEmotion = () => {
-    const [createEmotion, { error }] = useMutation(UPDATE_USER)
+    // const { loading, data } = useQuery(QUERY_ME);
+    // const userName = data?.me.username || [];
+    // console.log(userName);
+    
     const [emotion,setEmotion] = useState("happy");
     const [hint, setHint] = useState("");
     var randomIndex = Math.floor(Math.random()*emotions.length);
     var randomEmotion = emotions[randomIndex];
     var randomHint = hints[randomIndex];
-    const { loading, data } = useQuery(QUERY_ME);
-    const username = data?.me.username || [];
-    console.log(username);
+    
+    //const [createEmotion, { error }] = useMutation(UPDATE_USER)
     const changeEmotion = async () => {
         try {
-            await createEmotion({variables:{username:"vixter030",pandaEmotion:randomEmotion}});
+            //await createEmotion({variables:{username:userName,pandaEmotion:randomEmotion}});
             setEmotion(randomEmotion);
             setHint(randomHint);
         } catch (e) {
@@ -36,6 +39,36 @@ const PandaEmotion = () => {
        changeEmotion();
         },[]);
 
+
+        function handleAnswer(event){
+            if(event.target.id===emotion){
+                console.log("correct");
+                switch(emotion) {
+                    case "angry":
+                        window.open('https://www.youtube.com/watch?v=fzjfsOUmg3I', '_blank')
+                      break;
+                    case "lonely":
+                        window.open('https://www.youtube.com/watch?v=GYEOwClY-cQ', '_blank')
+                      break;
+                      case "disappointed":
+                        window.open('https://www.youtube.com/watch?v=tN5gSwhBMek', '_blank')
+                        break;
+                        case "worried":
+                        window.open('https://www.youtube.com/watch?v=JzKZ75ELpro', '_blank')
+                      break;
+                      case "jealous":
+                        window.open('https://www.youtube.com/watch?v=6CLuYV9Hlkk', '_blank')
+                      break;
+                  }
+                  
+                    setEmotion("happy");
+                    setHint("Good job! Panda is happy again!");
+                    
+            }
+            
+        }
+
+        
     return (
     <div className='columns'>
         <div className="column is-two-thirds">
@@ -71,11 +104,11 @@ const PandaEmotion = () => {
                         Choose what will help Panda!
                     </p>
                     <ul className="menu-list">
-                        <li className='columns'><a className = "column" id = "angry" href="https://www.youtube.com/watch?v=fzjfsOUmg3I" target="_blank" rel="noreferrer">Go on a walk</a><PlaySound className = "column" src= {require(`../../pages/audio/walk.mp3`)}/></li>
-                        <li className='columns'><a className = "column" id = "lonely" href="https://www.youtube.com/watch?v=GYEOwClY-cQ" target="_blank" rel="noreferrer">Listen to Music</a><PlaySound className = "column" src= {require(`../../pages/audio/music.mp3`)}/></li>
-                        <li className='columns'><a className = "column" id = "worried" href="https://www.youtube.com/watch?v=JzKZ75ELpro" target="_blank" rel="noreferrer">Journal your feelings</a><PlaySound className = "column" src= {require(`../../pages/audio/write.mp3`)}/></li>
-                        <li className='columns'><a className = "column" id = "disappointed" href="https://www.youtube.com/watch?v=tN5gSwhBMek" target="_blank" rel="noreferrer">Take Deep Breaths</a><PlaySound className = "column" src= {require(`../../pages/audio/breathe.mp3`)}/></li>
-                        <li className='columns'><a className = "column" id = "jealous" href="https://www.youtube.com/watch?v=6CLuYV9Hlkk" target="_blank" rel="noreferrer">Count Five Things I'm Grateful For</a><PlaySound className = "column" src= {require(`../../pages/audio/gratitude.mp3`)}/></li>
+                        <li className='columns'><button onClick={handleAnswer} className = "column m-2" id = "angry" >Go on a walk</button><PlaySound className = "column" src= {require(`../../pages/audio/walk.mp3`)}/></li>
+                        <li className='columns'><button onClick={handleAnswer} className = "column m-2" id = "lonely">Listen to Music</button><PlaySound className = "column" src= {require(`../../pages/audio/music.mp3`)}/></li>
+                        <li className='columns'><button onClick={handleAnswer} className = "column m-2" id = "worried">Journal your feelings</button><PlaySound className = "column" src= {require(`../../pages/audio/write.mp3`)}/></li>
+                        <li className='columns'><button onClick={handleAnswer} className = "column m-2" id = "disappointed">Take Deep Breaths</button><PlaySound className = "column" src= {require(`../../pages/audio/breathe.mp3`)}/></li>
+                        <li className='columns'><button onClick={handleAnswer} className = "column m-2" id = "jealous">Count Five Things I'm Grateful For</button><PlaySound className = "column" src= {require(`../../pages/audio/gratitude.mp3`)}/></li>
                     </ul>
                 </aside>
     </div>
