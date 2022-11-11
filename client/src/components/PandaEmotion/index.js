@@ -5,14 +5,19 @@ import PlaySound from "../PlaySound";
 import { useEffect, useState } from 'react';
 
 const emotions=["angry","worried","lonely","jealous","disappointed"];
+const hints = ["Panda needs to release some negative energy, excersize really helps!","Sometimes writing down your worries helps with anxiety!", "If you have no one to talk to, some music really helps!", "Other might have things you want, but you have so many things you can be thankful for!","It's easy to get frustrated and sad when you're disappointed, try some calming techniques!"]
 const PandaEmotion = () => {
     const [createEmotion, { error }] = useMutation(UPDATE_USER)
     const [emotion,setEmotion] = useState("happy");
-    var randomEmotion = emotions[Math.floor(Math.random()*emotions.length)];
+    const [hint, setHint] = useState("");
+    var randomIndex = Math.floor(Math.random()*emotions.length);
+    var randomEmotion = emotions[randomIndex];
+    var randomHint = hints[randomIndex];
     const changeEmotion = async () => {
         try {
             await createEmotion({variables:{username:"vixter030",pandaEmotion:randomEmotion}});
             setEmotion(randomEmotion);
+            setHint(randomHint);
         } catch (e) {
             console.log(e);
         }
@@ -20,6 +25,7 @@ const PandaEmotion = () => {
     useEffect(()=>{
        // await changeEmotion()
        setEmotion(randomEmotion);
+       setHint(randomHint);
        changeEmotion();
         },[]);
 
@@ -27,16 +33,18 @@ const PandaEmotion = () => {
         <section className="hero is-info welcome is-small">
             <div className="hero-body">
                 <div className="container">
-                    <h1 className="title">
-                        Welcome Back.
+                    <div className='columns'>
+                    <h1 className="title column is-half">
+                        Panda is {emotion}!
                         {/* This will tell user what emotion panda has */}
                     </h1>
-
+                    <PlaySound className = "column is-half" src= {require(`../../pages/audio/${emotion}.mp3`)}/>
+                    </div>
                     <h2 className="subtitle">
-                        Your panda missed you!
+                        {hint}
                         {/* This will give a hint as to how to help the panda */}
                     </h2>
-                    <PlaySound src="Welcome-back.mp3" />
+                    
                     <div>
                         <img
                             src={require(`../../pages/pandas/${emotion}.PNG`)}
