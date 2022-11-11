@@ -24,7 +24,7 @@ const Home = () => {
     <div className="container">
         <div className="columns">
             {Auth.loggedIn() ? (
-            <div className="column is-one-quarter">
+            <div className="column is-one-quarter mt-2">
                 <aside className="menu is-mobile">
                     <p className="menu-label">
                         Meditations 

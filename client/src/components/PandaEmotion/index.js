@@ -37,13 +37,13 @@ const PandaEmotion = () => {
         },[]);
 
     return (
-    <div className='column'>
-        <div className="column is-five-eights">
+    <div className='columns'>
+        <div className="column is-two-thirds">
         <section className="hero is-info welcome is-small">
             <div className="hero-body">
                 <div className="container">
                     <div className='columns'>
-                    <h1 className="title column">
+                    <h1 className="title column mb-0">
                         Panda is {emotion}!
                         {/* This will tell user what emotion panda has */}
                     </h1>
@@ -65,7 +65,7 @@ const PandaEmotion = () => {
         </section>
     </div>
     
-    <div className="column is-one-quarter">
+    <div className="column is-one-third mt-2">
         <aside className="menu is-mobile">
                     <p className="menu-label">
                         Choose what will help Panda!
