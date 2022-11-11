@@ -2,6 +2,9 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import PlaySound from "../components/PlaySound";
+
+import SideBar from "../components/SideBar";
+
 import PandaEmotion from '../components/PandaEmotion';
 
 import { Link } from "react-router-dom";
@@ -91,19 +94,7 @@ const Home = () => {
             
             {Auth.loggedIn() ? (
             <div className="column is-one-quarter">
-                <aside className="menu is-mobile">
-                    <p className="menu-label">
-                        Choose what will help Panda!
-                    </p>
-                    <ul className="menu-list">
-                        <li><a href="https://www.youtube.com/watch?v=fzjfsOUmg3I" target="_blank" rel="noreferrer">Go on a walk</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=GYEOwClY-cQ" target="_blank" rel="noreferrer">Listen to Music</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro" target="_blank" rel="noreferrer">Hobby</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JzKZ75ELpro" target="_blank" rel="noreferrer">Journal your feelings</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=tN5gSwhBMek" target="_blank" rel="noreferrer">Take Deep Breaths</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=6CLuYV9Hlkk" target="_blank" rel="noreferrer">Count Five Things I'm Grateful For</a></li>
-                    </ul>
-                </aside>
+                <SideBar/>
             </div>
             ) : (
                 <div/>
