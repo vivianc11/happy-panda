@@ -39,44 +39,44 @@ const notesReducer = (prevState, action) => {
 };
 
 export default function Note() {
-    const [formState, setFormState] = useState({
-        noteText: '',
-      });
+    // const [formState, setFormState] = useState({
+    //     noteText: '',
+    //   });
     // eslint-disable-next-line no-unused-vars
     const [addThought, { error, data }] = useMutation(ADD_THOUGHT);
 
       // update state based on form input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+//     const handleChange = (event) => {
+//         const { name, value } = event.target;
 
-        setFormState({
-        ...formState,
-        [name]: value,
-        });
-    };
+//         setFormState({
+//         ...formState,
+//         [name]: value,
+//         });
+//     };
 
-      // submit form
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log("this is form state")
-        console.log(noteText);
+//       // submit form
+//     const handleFormSubmit = async (event) => {
+//         event.preventDefault();
+//         console.log("this is form state")
+//         console.log(noteText);
 
-        try {
-            const { data } = await addThought({
-                variables: { noteText: noteText },
-        });
-        console.log("this is going to mutation")
-        console.log(data);
+//         try {
+//             const { data } = await addThought({
+//                 variables: { ...formState },
+//         });
+//         console.log("this is going to mutation")
+//         console.log(data);
 
-        } catch (e) {
-          console.error(e);
-    }
-  };
+//         } catch (e) {
+//           console.error(e);
+//     }
+//   };
 
     const [noteText, setNoteText] = useState('');
     const [notesState, dispatch] = useReducer(notesReducer, initialNoteState);
 
-    const addNote = event => {
+    const addNote = async event => {
         event.preventDefault();
 
         if(!noteText) {
@@ -90,6 +90,21 @@ export default function Note() {
         };
 
         dispatch({ type: 'ADD_NOTE', payload: newNote });
+
+        // This will allow you to store the data
+        try { 
+            // eslint-disable-next-line no-unused-vars
+            const { data } = await addThought({
+                variables: { noteText: noteText}
+            })
+            console.log("It works")
+
+        } catch(err){
+            console.log("It failed")
+        }
+
+        // This will clear out the data in the textarea with onClick
+        // Want to do it in this order so that store the text THEN clear the value
         setNoteText('');
     };
     
@@ -105,16 +120,16 @@ export default function Note() {
 
     return (
         <div onDragOver={dragOver}>            
-            <form onClick={addNote} className="note-form">
+            {/* <form onSubmit={() => {addNote(); handleFormSubmit()}}  */}
+            
+            <form className="note-form">
                 
             <h1>Notes ({ notesState.totalNotes })</h1>
                 <textarea value={noteText}
-                    onChange={event => {setNoteText(event.target.value);
-                        handleChange()
-                    }}
+                    onChange={event => setNoteText(event.target.value)}
                     placeholder="How did this make you feel?">
                 </textarea>
-                <button onSubmit={handleFormSubmit}>
+                <button onClick={addNote}>
                     Add your thoughts, and move them around!
                 </button>
             </form>
