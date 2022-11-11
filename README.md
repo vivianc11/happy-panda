@@ -23,25 +23,25 @@ We believe that it's important to provide social-emotional education to kids so 
 
 ## Table of Contents
 
--[Installation](#installation)
+- [Installation](#installation)
 
--[Usage](#usage)
+- [Usage](#usage)
 
--[Screenshots](#screenshots)
+- [Screenshots](#screenshots)
 
--[Collaborators](#collaborators)
+- [Collaborators](#collaborators)
 
--[Resources](#resources)
+- [Resources](#resources)
 
--[License](#license)
+- [License](#license)
 
--[Walkthrough-Video](#walkthrough-video)
+- [Walkthrough-Video](#walkthrough-video)
 
--[Deploy-Application](#deploy-application)
+- [Deploy-Application](#deploy-application)
 
--[Tests](#tests)
+- [Tests](#tests)
 
--[Technology-Stack](#technology-stack)
+- [Technology-Stack](#technology-stack)
 
 ## Installation
 
